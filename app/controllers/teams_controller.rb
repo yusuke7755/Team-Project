@@ -1,6 +1,6 @@
 class TeamsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_team, only: %i[show edit update destroy]
+  before_action :set_team, only: %i[show edit update destroy, change_leader]
 
   def index
     @teams = Team.all
@@ -47,8 +47,16 @@ class TeamsController < ApplicationController
     @team = current_user.keep_team_id ? Team.find(current_user.keep_team_id) : current_user.teams.first
   end
 
-  private
+  def change_leader
+    new_owner_id = (params[:assign_user_id]).to_i
+    @team.update(owner_id: new_owner_id)
+    @user = User.find(@team.owner_id)
+    TeamMailer.team_mail(@user).deliver
+    redirect_to team_path(@team.id), notice: I18n.t('views.messages.change_leader')
+  end
 
+  private
+  
   def set_team
     @team = Team.friendly.find(params[:id])
   end
