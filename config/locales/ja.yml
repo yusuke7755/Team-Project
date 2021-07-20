@@ -205,7 +205,7 @@ ja:
     pm: 午後
   views:
     messages:
-      create_agenda: 'アジェンダ作成に成功しました！'
+      create_agenda: 'アジェンダ作成'
       create_article: '記事作成に成功しました！'
       update_article: '記事更新に成功しました！'
       assigned: 'アサインしました！'
@@ -238,7 +238,6 @@ ja:
       team_build: 'チーム作成'
       team_build2: 'チームを作成する'
       select_team: 'チーム選択'
-      create_agenda: 'アジェンダ作成'
       input_agenda_title: 'タイトル入力'
       input_team_name: 'チーム名を入力してください'
       recent_posts: '最近投稿された記事'
@@ -255,6 +254,8 @@ ja:
       posted_articles: '投稿した記事一覧'
       change_leader: '権限が渡されました！！'
       complete_change_leader: 'あなたがチームのリーダーになりました。'
+      create_agenda: 'アジェンダを作成しました。'
+      delete_agenda: 'アジェンダを削除しました！'
     button:
       submit: '投稿'
       edit: '編集'
